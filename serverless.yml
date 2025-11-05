@@ -28,7 +28,7 @@ functions:
           integration: lambda
 
   modificar:
-    handler: modificar_alumno.lambda_handler
+    handler: ModificarAlumno.lambda_handler
     events:
       - http:
           path: /alumnos/modificar
@@ -37,7 +37,7 @@ functions:
           integration: lambda
 
   eliminar:
-    handler: eliminar_alumno.lambda_handler
+    handler: EliminarAlumno.lambda_handler
     events:
       - http:
           path: /alumnos/eliminar
@@ -46,7 +46,7 @@ functions:
           integration: lambda
 
   buscar:
-    handler: buscar_alumno.lambda_handler
+    handler: BuscandoAlumnos.lambda_handler
     events:
       - http:
           path: /alumnos/buscar
