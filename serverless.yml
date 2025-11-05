@@ -46,7 +46,7 @@ functions:
           integration: lambda
 
   buscar:
-    handler: BuscandoAlumnos.lambda_handler
+    handler: BuscarAlumnos.lambda_handler
     events:
       - http:
           path: /alumnos/buscar
