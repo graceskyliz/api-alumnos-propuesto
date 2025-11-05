@@ -1,0 +1,55 @@
+org: graciamendoza
+service: api-alumnos
+
+provider:
+  name: aws
+  runtime: python3.12
+  timeout: 30
+  iam:
+    role: arn:aws:iam::645888963933:role/LabRole
+
+functions:
+  listar:
+    handler: ListarAlumnos.lambda_handler
+    events:
+      - http:
+          path: /alumnos/listar
+          method: post
+          cors: true
+          integration: lambda
+
+  crear:
+    handler: CrearAlumno.lambda_handler
+    events:
+      - http:
+          path: /alumnos/crear
+          method: post
+          cors: true
+          integration: lambda
+
+  modificar:
+    handler: modificar_alumno.lambda_handler
+    events:
+      - http:
+          path: /alumnos/modificar
+          method: post
+          cors: true
+          integration: lambda
+
+  eliminar:
+    handler: eliminar_alumno.lambda_handler
+    events:
+      - http:
+          path: /alumnos/eliminar
+          method: post
+          cors: true
+          integration: lambda
+
+  buscar:
+    handler: buscar_alumno.lambda_handler
+    events:
+      - http:
+          path: /alumnos/buscar
+          method: post
+          cors: true
+          integration: lambda
